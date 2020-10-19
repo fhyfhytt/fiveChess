@@ -279,80 +279,80 @@ void MyMainWindow::sumScore(Pointer *pointer) {
     } else if (this->checkScore(pointer, this->WhiteChess, 1, 1) >= 5) {
         pointer->addScore(5);
     }
-    if (this->checkScore(pointer, this->BlackChess, 0, 1) == 0) {
-        pointer->addScore(1);
-    } else if (this->checkScore(pointer, this->BlackChess, 0, 1) == 1) {
-        pointer->addScore(-2);
-    } else if (this->checkScore(pointer, this->BlackChess, 0, 1) == 2) {
-        pointer->addScore(3);
-    } else if (this->checkScore(pointer, this->BlackChess, 0, 1) >= 3) {
-        pointer->addScore(5);
-    }
-        if (this->checkScore(pointer, this->BlackChess, 1, 0) == 0) {
-        pointer->addScore(1);
-    } else if (this->checkScore(pointer, this->BlackChess, 1, 0) == 1) {
-        pointer->addScore(-2);
-    } else if (this->checkScore(pointer, this->BlackChess, 1, 0) == 2) {
-        pointer->addScore(3);
-    } else if (this->checkScore(pointer, this->BlackChess, 1, 0) >= 3) {
-        pointer->addScore(5);
-    }
-                if (this->checkScore(pointer, this->BlackChess, -1, 1) == 0) {
-        pointer->addScore(1);
-    } else if (this->checkScore(pointer, this->BlackChess, -1, 1) == 1) {
-        pointer->addScore(-2);
-    } else if (this->checkScore(pointer, this->BlackChess, -1, 1) == 2) {
-        pointer->addScore(3);
-    } else if (this->checkScore(pointer, this->BlackChess, -1, 1) >= 3) {
-        pointer->addScore(5);
-    };
-                if (this->checkScore(pointer, this->BlackChess, 1, 1) == 0) {
-        pointer->addScore(1);
-    } else if (this->checkScore(pointer, this->BlackChess, 1, 1) == 1) {
-        pointer->addScore(-2);
-    } else if (this->checkScore(pointer, this->BlackChess, 1, 1) == 2) {
-        pointer->addScore(3);
-    } else if (this->checkScore(pointer, this->BlackChess, 1, 1) >= 3) {
-        pointer->addScore(5);
-    }
-
-    //判断三个连续存在算法
-    if (this->checkScore(pointer, this->BlackChess, 0, 1, 3) >= 3) {
-        pointer->addScore(1);
-    }
-      if (this->checkScore(pointer, this->BlackChess, 1, 0, 3) >= 3) {
-        pointer->addScore(1);
-    }
-        if (this->checkScore(pointer, this->BlackChess, 1, 1, 3) >= 3) {
-        pointer->addScore(1);
-    }
-          if (this->checkScore(pointer, this->BlackChess, -1, 1, 3) >= 3) {
-        pointer->addScore(1);
-    }
-    if (this->checkScore(pointer, this->BlackChess, 0, 1, 2) >= 1) {
-        pointer->addScore(-2);
-    }
-      if (this->checkScore(pointer, this->BlackChess, 1, 0, 2) >1) {
-        pointer->addScore(-2);
-    }
-        if (this->checkScore(pointer, this->BlackChess, 1, 1, 2) > 1) {
-        pointer->addScore(-2);
-    }
-          if (this->checkScore(pointer, this->BlackChess, -1, 1, 2) > 1) {
-        pointer->addScore(-2);
-    }
-          if (this->checkScore(pointer, this->BlackChess, 0, 1, 3) > 2) {
-        pointer->addScore(-2);
-    }
-      if (this->checkScore(pointer, this->BlackChess, 1, 0, 3) >= 2) {
-        pointer->addScore(-2);
-    }
-        if (this->checkScore(pointer, this->BlackChess, 1, 1, 3) >= 2) {
-        pointer->addScore(-2);
-    }
-          if (this->checkScore(pointer, this->BlackChess, -1, 1, 3) >= 2) {
-        pointer->addScore(-2);
-    }
+//    if (this->checkScore(pointer, this->BlackChess, 0, 1) == 0) {
+//        pointer->addScore(1);
+//    } else if (this->checkScore(pointer, this->BlackChess, 0, 1) == 1) {
+//        pointer->addScore(-2);
+//    } else if (this->checkScore(pointer, this->BlackChess, 0, 1) == 2) {
+//        pointer->addScore(3);
+//    } else if (this->checkScore(pointer, this->BlackChess, 0, 1) >= 3) {
+//        pointer->addScore(5);
+//    }
+//        if (this->checkScore(pointer, this->BlackChess, 1, 0) == 0) {
+//        pointer->addScore(1);
+//    } else if (this->checkScore(pointer, this->BlackChess, 1, 0) == 1) {
+//        pointer->addScore(-2);
+//    } else if (this->checkScore(pointer, this->BlackChess, 1, 0) == 2) {
+//        pointer->addScore(3);
+//    } else if (this->checkScore(pointer, this->BlackChess, 1, 0) >= 3) {
+//        pointer->addScore(5);
+//    }
+//                if (this->checkScore(pointer, this->BlackChess, -1, 1) == 0) {
+//        pointer->addScore(1);
+//    } else if (this->checkScore(pointer, this->BlackChess, -1, 1) == 1) {
+//        pointer->addScore(-2);
+//    } else if (this->checkScore(pointer, this->BlackChess, -1, 1) == 2) {
+//        pointer->addScore(3);
+//    } else if (this->checkScore(pointer, this->BlackChess, -1, 1) >= 3) {
+//        pointer->addScore(5);
+//    };
+//                if (this->checkScore(pointer, this->BlackChess, 1, 1) == 0) {
+//        pointer->addScore(1);
+//    } else if (this->checkScore(pointer, this->BlackChess, 1, 1) == 1) {
+//        pointer->addScore(-2);
+//    } else if (this->checkScore(pointer, this->BlackChess, 1, 1) == 2) {
+//        pointer->addScore(3);
+//    } else if (this->checkScore(pointer, this->BlackChess, 1, 1) >= 3) {
+//        pointer->addScore(5);
+//    }
+//
+//    //判断三个连续存在算法
+//    if (this->checkScore(pointer, this->BlackChess, 0, 1, 3) >= 3) {
+//        pointer->addScore(1);
+//    }
+//      if (this->checkScore(pointer, this->BlackChess, 1, 0, 3) >= 3) {
+//        pointer->addScore(1);
+//    }
+//        if (this->checkScore(pointer, this->BlackChess, 1, 1, 3) >= 3) {
+//        pointer->addScore(1);
+//    }
+//          if (this->checkScore(pointer, this->BlackChess, -1, 1, 3) >= 3) {
+//        pointer->addScore(1);
+//    }
+//    if (this->checkScore(pointer, this->BlackChess, 0, 1, 2) >= 1) {
+//        pointer->addScore(-2);
+//    }
+//      if (this->checkScore(pointer, this->BlackChess, 1, 0, 2) >1) {
+//        pointer->addScore(-2);
+//    }
+//        if (this->checkScore(pointer, this->BlackChess, 1, 1, 2) > 1) {
+//        pointer->addScore(-2);
+//    }
+//          if (this->checkScore(pointer, this->BlackChess, -1, 1, 2) > 1) {
+//        pointer->addScore(-2);
+//    }
+//          if (this->checkScore(pointer, this->BlackChess, 0, 1, 3) > 2) {
+//        pointer->addScore(-2);
+//    }
+//      if (this->checkScore(pointer, this->BlackChess, 1, 0, 3) >= 2) {
+//        pointer->addScore(-2);
+//    }
+//        if (this->checkScore(pointer, this->BlackChess, 1, 1, 3) >= 2) {
+//        pointer->addScore(-2);
+//    }
+//          if (this->checkScore(pointer, this->BlackChess, -1, 1, 3) >= 2) {
+//        pointer->addScore(-2);
+//    }
 }
 
 int MyMainWindow::checkScore(Pointer *pointer, QVector<Pointer> array, int xdiff, int ydiff, int key) {
