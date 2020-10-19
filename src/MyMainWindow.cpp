@@ -74,6 +74,7 @@ void MyMainWindow::paintEvent(QPaintEvent *event) {
     if (!this->WhiteChess.empty()) {
         for (auto i = this->WhiteChess.begin(); i != this->WhiteChess.end(); i++) {
             paint->setBrush(QBrush(Qt::white, Qt::SolidPattern));//毛刷：颜色，实图案
+//            cout<<"x:"<<(*i)->x<<"y:"<<(*i)->y<<endl;
             paint->drawEllipse((*i).x * this->WIDTH + this->x - WIDTH / 4, (*i).y * this->WIDTH + this->y - WIDTH / 4,
                                WIDTH / 2, WIDTH / 2);//画椭圆：中心点X,Y,宽度，高度
         }
@@ -162,9 +163,7 @@ void MyMainWindow::AIplayer() {
     this->step++;
     //简单的AI
 
-        Pointer pointer = this->getBestPointer();
-
-
+    Pointer pointer = this->getBestPointer();
     this->WhiteChess.push_back(pointer);
     if (this->win(&pointer, 0)) {
         this->stoff = false;
@@ -186,10 +185,10 @@ void MyMainWindow::AIplayer() {
 QVector<Pointer> MyMainWindow::getEmptyArray() {
     QVector<Pointer> existArray;
     QVector<Pointer> emptyArray;
-    emptyArray.clear();
-    emptyArray.squeeze();
+    qDeleteAll(existArray);
+    qDeleteAll(emptyArray);
     existArray.clear();
-    existArray.squeeze();
+    emptyArray.clear();
     existArray.append(this->WhiteChess);
     existArray.append(this->BlackChess);
     for (auto j = existArray.begin(); j != existArray.end(); j++) {
@@ -216,11 +215,11 @@ Pointer MyMainWindow::getBestPointer() {
     for (auto i = emptyArray.begin(); i != emptyArray.end(); i++) {
         this->sumScore(i);
         for(auto j= this->NewArray.begin();j != this->NewArray.end(); j++){
-            if(i->x==j->x&&i->y==j->y){
-                j->setScore(i->score);
+            if((*i).x==j->x&&(*i).y==j->y){
+                j->setScore((*i).score);
             }
         }
-        emptyList.push_back(*new Pointer(i->x,i->y,i->score));
+        emptyList.push_back(*new Pointer((*i).x,(*i).y,(*i).score));
     }
     this->update();
     qSort(emptyList.begin(), emptyList.end(), simpleSort);
@@ -355,12 +354,12 @@ void MyMainWindow::sumScore(Pointer *pointer) {
           if (this->checkScore(pointer, this->BlackChess, -1, 1, 3) >= 2) {
         pointer->addScore(-2);
     }
-//           cout<<pointer->x<<pointer->y<<pointer->score<<endl;
 }
 
 int MyMainWindow::checkScore(Pointer *pointer, QVector<Pointer> array, int xdiff, int ydiff, int key) {
     Pointer *tmp = new Pointer(0, 0, 0);
     int cnt = 0;
+//    cout<<pointer->x<<pointer->y<<endl;
     for (int i = 1; i < key; i++) {
         bool a = false;
         tmp->x = pointer->x - xdiff * i;
@@ -426,9 +425,9 @@ bool MyMainWindow::checkByStep(Pointer *pointer, QVector<Pointer> array, int xdi
 
 void MyMainWindow::start() {
     //设置开关
-//    qDeleteAll<Pointer *>(this->BlackChess.begin(),this->BlackChess.end());
+    qDeleteAll(this->BlackChess.begin(),this->BlackChess.end());
     this->BlackChess.clear();
-//    qDeleteAll<Pointer *>(this->WhiteChess.begin(),this->WhiteChess.end());
+    qDeleteAll(this->WhiteChess.begin(),this->WhiteChess.end());
     this->WhiteChess.clear();
     this->stoff = true;
     for (auto j = this->NewArray.begin(); j != this->NewArray.end(); j++) {
