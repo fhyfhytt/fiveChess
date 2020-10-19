@@ -187,19 +187,19 @@ QVector<Pointer> MyMainWindow::getEmptyArray() {
     QVector<Pointer> emptyArray;
     existArray.clear();
     emptyArray.clear();
-         cout<<"exist"<<existArray.size()<<endl;
-     cout<<"empty"<<emptyArray.size()<<endl;
     existArray.append(this->WhiteChess);
     existArray.append(this->BlackChess);
     QVector<Pointer>().swap(emptyArray);
     for (auto i = this->NewArray.begin(); i != this->NewArray.end(); i++) {
-            for (auto j = existArray.begin(); j != existArray.end(); j++) {
-            if ((*j).x != (*i).x || (*j).y != (*i).y) {
-                cout<<(*i).x<<(*i).y<<endl;
-                emptyArray.push_back((*i));
-
+        bool a=false;
+        for (auto j = existArray.begin(); j != existArray.end(); j++) {
+            if ((*j).x == (*i).x && (*j).y == (*i).y) {
+                a = true;
             }
         }
+             if (!a) {
+                emptyArray.push_back((*i));
+            }
     }
     return emptyArray;
 }
