@@ -27,19 +27,19 @@ public:
     const int WIDTH=(dw.height()-80)/SIZE;
     const int x=(dw.width()-dw.height()+80)/2,y=60;
     int step=0;
-    QVector<Pointer*> BlackChess;//全部黑棋子
-    QVector<Pointer*> WhiteChess;//全部白棋子
+    QVector<Pointer> BlackChess;//全部黑棋子
+    QVector<Pointer> WhiteChess;//全部白棋子
     void paintEvent(QPaintEvent *event);
     void  AIplayer();
     bool win(Pointer *pointer,int player);
-    bool checkByStep(Pointer *pointer,QVector<Pointer*> list,int xdiff, int ydiff);
+    bool checkByStep(Pointer *pointer,QVector<Pointer> list,int xdiff, int ydiff);
     bool stoff= false;
     QVector<Pointer> NewArray;
     void setNewArray();
-    int checkScore(Pointer *pointer, QVector<Pointer*> array, int xdiff, int ydiff,int key=5);
+    int checkScore(Pointer *pointer, QVector<Pointer> array, int xdiff, int ydiff,int key=5);
     void sumScore(Pointer *pointer);
     Pointer getBestPointer();
-    QVector<Pointer *> getEmptyArray();
+    QVector<Pointer> getEmptyArray();
 signals:
 public slots:
 //    void slotOpen();
