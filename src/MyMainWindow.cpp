@@ -185,8 +185,8 @@ void MyMainWindow::AIplayer() {
 QVector<Pointer> MyMainWindow::getEmptyArray() {
     QVector<Pointer> existArray;
     QVector<Pointer> emptyArray;
-    qDeleteAll(existArray);
-    qDeleteAll(emptyArray);
+//    qDeleteAll(existArray);
+//    qDeleteAll(emptyArray);
     existArray.clear();
     emptyArray.clear();
     existArray.append(this->WhiteChess);
@@ -425,9 +425,9 @@ bool MyMainWindow::checkByStep(Pointer *pointer, QVector<Pointer> array, int xdi
 
 void MyMainWindow::start() {
     //设置开关
-    qDeleteAll(this->BlackChess.begin(),this->BlackChess.end());
+//    qDeleteAll(this->BlackChess.begin(),this->BlackChess.end());
     this->BlackChess.clear();
-    qDeleteAll(this->WhiteChess.begin(),this->WhiteChess.end());
+//    qDeleteAll(this->WhiteChess.begin(),this->WhiteChess.end());
     this->WhiteChess.clear();
     this->stoff = true;
     for (auto j = this->NewArray.begin(); j != this->NewArray.end(); j++) {
