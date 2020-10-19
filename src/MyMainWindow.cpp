@@ -185,24 +185,23 @@ void MyMainWindow::AIplayer() {
 QVector<Pointer> MyMainWindow::getEmptyArray() {
     QVector<Pointer> existArray;
     QVector<Pointer> emptyArray;
-//    qDeleteAll(existArray);
-//    qDeleteAll(emptyArray);
     existArray.clear();
     emptyArray.clear();
+         cout<<"exist"<<existArray.size()<<endl;
+     cout<<"empty"<<emptyArray.size()<<endl;
     existArray.append(this->WhiteChess);
     existArray.append(this->BlackChess);
-    for (auto j = existArray.begin(); j != existArray.end(); j++) {
+    QVector<Pointer>().swap(emptyArray);
     for (auto i = this->NewArray.begin(); i != this->NewArray.end(); i++) {
+            for (auto j = existArray.begin(); j != existArray.end(); j++) {
+            if ((*j).x != (*i).x || (*j).y != (*i).y) {
+                cout<<(*i).x<<(*i).y<<endl;
+                emptyArray.push_back((*i));
 
-            if ((*j).x == (*i).x && (*j).y == (*i).y) {
-
-            }else{
-                emptyArray.push_back(*i);
             }
         }
     }
-    cout<<emptyArray.size()<<endl;
-    return  emptyArray;
+    return emptyArray;
 }
 
 bool simpleSort(Pointer a, Pointer b) {
@@ -210,9 +209,9 @@ bool simpleSort(Pointer a, Pointer b) {
 }
 
 Pointer MyMainWindow::getBestPointer() {
-    QVector<Pointer> emptyArray = this->getEmptyArray();
+    QVector<Pointer> emptyArray1 = this->getEmptyArray();
     QVector<Pointer> emptyList;
-    for (auto i = emptyArray.begin(); i != emptyArray.end(); i++) {
+    for (auto i = emptyArray1.begin(); i != emptyArray1.end(); i++) {
         this->sumScore(i);
         for(auto j= this->NewArray.begin();j != this->NewArray.end(); j++){
             if((*i).x==j->x&&(*i).y==j->y){
