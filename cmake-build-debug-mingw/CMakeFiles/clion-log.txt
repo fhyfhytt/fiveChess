@@ -1,0 +1,16 @@
+"D:\c++\CLion 2022.1.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -S D:\work\c++\server -B D:\work\c++\server\cmake-build-debug-mingw
+CMake Warning (dev) at D:/c++/CLion 2022.1.3/bin/cmake/win/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (Boost) does
+  not match the name of the calling package (BOOST).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  D:/c++/CLion 2022.1.3/bin/cmake/win/share/cmake-3.22/Modules/FindBoost.cmake:2375 (find_package_handle_standard_args)
+  CMakeLists.txt:15 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Boost_INCLUDE_DIRS E:/sys2/mingw64/include
+Boost_LIBRARY_DIRS E:/sys2/mingw64/lib
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/work/c++/server/cmake-build-debug-mingw

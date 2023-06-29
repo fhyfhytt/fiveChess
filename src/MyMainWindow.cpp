@@ -139,8 +139,7 @@ void MyMainWindow::mousePressEvent(QMouseEvent *ev) {
             this->update();
         } else {
             this->stoff = false;
-            QMessageBox::StandardButton result = QMessageBox::information(NULL, "胜负已分", "黑棋胜",
-                                                                          QMessageBox::Yes | QMessageBox::No);
+            QMessageBox::StandardButton result = QMessageBox::information(NULL, "胜负已分", "黑棋胜",QMessageBox::Yes | QMessageBox::No);
             switch (result) {
                 case QMessageBox::Yes:
                     this->start();
@@ -168,8 +167,7 @@ void MyMainWindow::AIplayer() {
     this->WhiteChess.push_back(pointer);
     if (this->win(&pointer, 0)) {
         this->stoff = false;
-        QMessageBox::StandardButton result = QMessageBox::information(NULL, "胜负已分", "白棋胜",
-                                                                      QMessageBox::Yes | QMessageBox::No);
+        QMessageBox::StandardButton result = QMessageBox::information(NULL, "胜负已分", "白棋胜",QMessageBox::Yes | QMessageBox::No);
         switch (result) {
             case QMessageBox::Yes:
                 this->start();
@@ -222,7 +220,7 @@ Pointer MyMainWindow::getBestPointer() {
         emptyList.push_back(*new Pointer((*i).x, (*i).y, (*i).score));
     }
     this->update();
-    qSort(emptyList.begin(), emptyList.end(), simpleSort);
+    std::sort(emptyList.begin(), emptyList.end(), simpleSort);
     return emptyList[0];
 }
 
@@ -356,7 +354,7 @@ void MyMainWindow::sumScore(Pointer *pointer) {
         pointer->addScore(100);
     }
     if (this->checkScore(pointer, this->BlackChess, 1, 1) >= 3) {
-        pointer->addScore(1000);
+        pointer->addScore(10000);
     }
     if (this->checkScore(pointer, this->BlackChess, 1, 1) >= 4) {
         pointer->addScore(0);
@@ -364,16 +362,16 @@ void MyMainWindow::sumScore(Pointer *pointer) {
 
     //判断三个连续存在算法
     if (this->checkScore(pointer, this->BlackChess, 0, 1, 3) >= 3) {
-        pointer->addScore(1000);
+        pointer->addScore(10000);
     }
     if (this->checkScore(pointer, this->BlackChess, 1, 0, 3) >= 3) {
-        pointer->addScore(1000);
+        pointer->addScore(10000);
     }
     if (this->checkScore(pointer, this->BlackChess, 1, 1, 3) >= 3) {
-        pointer->addScore(1000);
+        pointer->addScore(10000);
     }
     if (this->checkScore(pointer, this->BlackChess, -1, 1, 3) >= 3) {
-        pointer->addScore(1000);
+        pointer->addScore(10000);
     }
     if (this->checkScore(pointer, this->BlackChess, 0, 1, 2) >= 1) {
         pointer->addScore(-2);

@@ -7,7 +7,7 @@
 #pragma once
 #define ROW 15
 #define COL 15
-#include<iostream>
+#include <iostream>
 class ChessBoard {
 public:
     char m_cSquare[ROW][COL];

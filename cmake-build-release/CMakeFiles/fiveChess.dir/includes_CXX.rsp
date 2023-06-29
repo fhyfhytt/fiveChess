@@ -1,0 +1,1 @@
+-ID:/work/c++/server/cmake-build-release -ID:/work/c++/server -ID:/work/c++/server/cmake-build-release/fiveChess_autogen/include -isystem E:/sys2/mingw64/include -isystem E:/sys2/mingw64/include/QtCore -isystem E:/sys2/mingw64/share/qt5/mkspecs/win32-g++ -isystem E:/sys2/mingw64/include/QtWidgets -isystem E:/sys2/mingw64/include/QtGui

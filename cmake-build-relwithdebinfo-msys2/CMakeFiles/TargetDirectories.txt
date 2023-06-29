@@ -1,0 +1,3 @@
+D:/work/c++/server/cmake-build-relwithdebinfo-msys2/CMakeFiles/fiveChess.dir
+D:/work/c++/server/cmake-build-relwithdebinfo-msys2/CMakeFiles/ALL_BUILD.dir
+D:/work/c++/server/cmake-build-relwithdebinfo-msys2/CMakeFiles/ZERO_CHECK.dir

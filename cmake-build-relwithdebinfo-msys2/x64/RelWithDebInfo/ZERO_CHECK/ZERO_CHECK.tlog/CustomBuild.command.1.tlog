@@ -1,0 +1,10 @@
+^D:\WORK\C++\SERVER\CMAKE-BUILD-RELWITHDEBINFO-MSYS2\CMAKEFILES\E516E8485408D05E4B3E92584A673202\GENERATE.STAMP.RULE
+setlocal
+"D:\c++\CLion 2022.1.3\bin\cmake\win\bin\cmake.exe" -SD:/work/c++/server -BD:/work/c++/server/cmake-build-relwithdebinfo-msys2 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/work/c++/server/cmake-build-relwithdebinfo-msys2/fiveChess.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

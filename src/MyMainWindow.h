@@ -27,8 +27,8 @@ public:
     const int WIDTH=(dw.height()-80)/SIZE;
     const int x=(dw.width()-dw.height()+80)/2,y=60;
     int step=0;
-    QVector<Pointer> BlackChess;//全部黑棋子
     QVector<Pointer> WhiteChess;//全部白棋子
+    QVector<Pointer> BlackChess;//全部黑棋子
     void paintEvent(QPaintEvent *event);
     void  AIplayer();
     bool win(Pointer *pointer,int player);

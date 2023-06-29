@@ -1,0 +1,4 @@
+D:/work/c++/server/cmake-build-relwithdebinfo-mingw/CMakeFiles/fiveChess.dir
+D:/work/c++/server/cmake-build-relwithdebinfo-mingw/CMakeFiles/edit_cache.dir
+D:/work/c++/server/cmake-build-relwithdebinfo-mingw/CMakeFiles/rebuild_cache.dir
+D:/work/c++/server/cmake-build-relwithdebinfo-mingw/CMakeFiles/fiveChess_autogen.dir

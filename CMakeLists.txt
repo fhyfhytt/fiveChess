@@ -1,16 +1,18 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.22)
+cmake_policy(SET CMP0074 NEW)
 project(fiveChess)
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 11)
 aux_source_directory(./src SRC_LIST)
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
+
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #boost库所在的根目录
-set(BOOST_ROOT D:/c++/boost/boost_1_73_0/boost_1_73_0)
-find_package(BOOST 1.73.0 COMPONENTS thread)
+set(BOOST_ROOT E:/sys2/mingw64/include/boost)
+find_package(BOOST 1.79.0 COMPONENTS thread)
 if (Boost_FOUND)
     message(Boost_INCLUDE_DIRS " ${Boost_INCLUDE_DIRS}")
     message(Boost_LIBRARY_DIRS " ${Boost_LIBRARY_DIRS}")

@@ -1,0 +1,4 @@
+D:/work/c++/server/cmake-build-release-msys2/CMakeFiles/fiveChess.dir
+D:/work/c++/server/cmake-build-release-msys2/CMakeFiles/edit_cache.dir
+D:/work/c++/server/cmake-build-release-msys2/CMakeFiles/rebuild_cache.dir
+D:/work/c++/server/cmake-build-release-msys2/CMakeFiles/fiveChess_autogen.dir

@@ -1,0 +1,14 @@
+{
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+      "clangd.arguments": [
+        "--header-insertion=never",
+        "--completion-style=detailed",
+        "--query-driver=E:\\sys2\\mingw64\\bin\\g++*"
+    ],
+    "clangd.fallbackFlags": [
+        "-std=c++14",
+        "-I${workspaceFolder}/src/includes",
+        "--target=x86_64-w64-windows-gnu",
+        "--query-driver=E:\\sys2\\mingw64\\bin\\g++*"
+    ]
+}
